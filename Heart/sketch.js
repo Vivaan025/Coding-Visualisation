@@ -32,21 +32,33 @@
 //     }
 //     endShape();
 // }
-const points = [];
-var a = 0; // Initialize variable a
+let points = [];
+let a = 0;
+// var a = 0; // Initialize variable a
+
+function draw() {
+    background(0);
+    translate(width / 2, height / 2);
+    fill(155, 0, 100)
+    stroke(255);
+    beginShape(); // Start the shape
+    for (let v of points) {
+        vertex(v.x, v.y);
+    }
+    // for (var a = 0; a < TWO_PI; a += 0.01) {
+
+    //     vertex(x, y);
+    // }
+    endShape(); // End the shape
+
+    var r = 10;
+    var x = r * 16 * pow(sin(a), 3);
+    var y = -r * (13 * cos(a) - 5 * cos(2 * a) - 2 * cos(3 * a) - cos(4 * a)); // Define variable y
+    heart.push(createVector(x, y));
+    a += 0.01;
+}
 
 function setup() {
     createCanvas(400, 400);
-    background(0);
-    translate(width / 2, height / 2);
-    noFill();
-    stroke(255);
-    beginShape(); // Start the shape
-    for (var a = 0; a < TWO_PI; a += 0.01) {
-        var r = 10;
-        var x = r * 16 * pow(sin(a), 3);
-        var y = -r * (13 * cos(a) - 5 * cos(2 * a) - 2 * cos(3 * a) - cos(4 * a)); // Define variable y
-        vertex(x, y);
-    }
-    endShape(); // End the shape
 }
+

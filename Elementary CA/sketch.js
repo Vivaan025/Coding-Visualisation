@@ -1,8 +1,10 @@
 let cells = [];
 let generation = 0;
 let w = 10; //cell size
+// let ruleset = [1, 0, 1, 0, 0, 1, 0, 1];
 let ruleset = [0, 1, 0, 1, 1, 0, 1, 0]; //Rule 90 
-
+// let ruleset = [1, 1, 1, 1, 1, 1, 1];
+// let ruleset = [1, 1, 0, 0, 1, 0, 0, 0];
 
 function setup() {
     createCanvas(1020, 1020);
@@ -19,7 +21,7 @@ function setup() {
 function draw() {
     for (let i = 0; i < cells.length; i++) {
         if (cells[i] == 1) {
-            fill(15 * generation);
+            fill(15 * generation, 150, 12, 90);
             square(i * w, generation * w, w);
 
         }
